@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panadería Dulce Amanecer</title>
+  <style>
+    /* ---------- ESTILOS GENERALES ---------- */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #fff9f8;
+      color: #5a4634;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #fde4e1;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      color: #7b4b37;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #7b4b37;
+      margin: 0 1rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #e09177;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #7b4b37;
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #5a4634;
+    }
+
+    img {
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* ---------- SECCIÓN INICIO ---------- */
+    .hero {
+      background: linear-gradient(to bottom right, #fde4e1, #fff6f2);
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      color: #7b4b37;
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- SECCIÓN SOBRE NOSOTROS ---------- */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+    }
+
+    .about-text {
+      max-width: 500px;
+    }
+
+    /* ---------- SECCIÓN ELABORACIÓN ---------- */
+    .process {
+      background-color: #fff0ec;
+      padding: 3rem 1rem;
+      border-radius: 20px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      text-align: center;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover {
+      transform: translateY(-5px);
+    }
+
+    .step img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- SECCIÓN PRODUCTOS ---------- */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    /* ---------- SECCIÓN OPINIONES ---------- */
+    .testimonials {
+      background-color: #fde4e1;
+      padding: 3rem 1rem;
+      border-radius: 20px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .testimonial p {
+      font-style: italic;
+    }
+
+    .testimonial h4 {
+      margin-top: 1rem;
+      color: #7b4b37;
+    }
+
+    /* ---------- CONTACTO Y FOOTER ---------- */
+    .contact {
+      text-align: center;
+    }
+
+    .contact-info {
+      background-color: #fff0ec;
+      padding: 2rem;
+      border-radius: 12px;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #fde4e1;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      color: #7b4b37;
+    }
+
+    @media (max-width: 700px) {
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Panadería Dulce Amanecer</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#elaboracion">Elaboración</a>
+      <a href="#productos">Productos</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio" class="hero">
+    <h2>El sabor artesanal de cada mañana</h2>
+    <p>En <strong>Dulce Amanecer</strong> creamos productos frescos, naturales y hechos con amor.  
+    Descubrí la calidez de una panadería que combina tradición y creatividad.</p>
+    <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=1200&q=80" alt="Panadería artesanal">
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="nosotros">
+    <h2>Sobre Nosotros</h2>
+    <div class="about">
+      <img src="https://conelmorrofino.com/wp-content/uploads/2018/10/Las-mejores-panaderias-del-mundo-du-Pain-Paris.jpg" alt="Panadero amasando">
+      <div class="about-text">
+        <p><strong>Dulce Amanecer</strong> nació del amor por el pan artesanal y la pasión por lo natural.  
+        Cada día seleccionamos los mejores ingredientes para ofrecerte pan fresco, facturas suaves y tortas irresistibles.</p>
+        <p>Creemos en la importancia de la comida hecha a mano, sin apuro, y con el toque de calidez que solo una panadería familiar puede ofrecer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELABORACIÓN -->
+  <section id="elaboracion" class="process">
+    <h2>Así elaboramos nuestros productos</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJIKviEYUOLWtRmr9oXNTrbOwvNOHmQQ8oew&s" alt="Seleccion de ingredientes">
+        <h3>1. Selección de ingredientes</h3>
+        <p>Usamos harina de calidad, levaduras naturales y manteca artesanal.</p>
+      </div>
+      <div class="step">
+        <img src="https://innograin.uva.es/files/2023/09/Formado-1038x576.jpg" alt="Amasado artesanal">
+        <h3>2. Amasado y reposo</h3>
+        <p>El secreto está en el tiempo: la masa reposa para desarrollar su sabor único.</p>
+      </div>
+      <div class="step">
+        <img src="https://us.123rf.com/450wm/kanazonestore/kanazonestore2308/kanazonestore230800596/215725709-un-grupo-de-panes-en-un-horno-con-un-fuego-al-fondo.jpg?ver=6" alt="Horneado tradicional">
+        <h3>3. Horneado tradicional</h3>
+        <p>Horneamos con cariño para lograr esa textura perfecta y aroma irresistible.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <h2>Nuestros Productos</h2>
+    <div class="products-grid">
+      <div class="product">
+        <img src="https://media.elgourmet.com/recetas/cover/32d51403222d091e9fcb1ce0982259ba_3_3_photo.png" alt="Pan casero">
+        <h3>Pan Casero</h3>
+        <p>Suave por dentro y crujiente por fuera. Hecho con masa madre.</p>
+      </div>
+      <div class="product">
+        <img src="https://la100.cienradios.com/resizer/v2/IMOMYBSYLNGCNFUQIPXLWSN2QY.jpg?auth=b6fb72207c68188c8fc596f0dcceb9c4d8b4978e200fe5e0c0c67996e35c9d3e&width=1440&height=720" alt="Facturas">
+        <h3>Facturas Variadas</h3>
+        <p>Medialunas, vigilantes y cañoncitos elaborados a mano cada mañana.</p>
+      </div>
+      <div class="product">
+        <img src="https://i.pinimg.com/736x/65/c0/8d/65c08d33571940435d811596f2b7c8fa.jpg" alt="Tortas">
+        <h3>Tortas Artesanales</h3>
+        <p>Bizcochos húmedos y cremas suaves para cada celebración.</p>
+      </div>
+      <div class="product">
+        <img src="https://anitadelrio.co/wp-content/uploads/2021/03/DSC3239-2048x1367.jpg" alt="Galletas">
+        <h3>Galletas Caseras</h3>
+        <p>Crocantes y dulces, ideales para acompañar el té o el café.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <h2>Contacto</h2>
+    <div class="contact-info">
+      <p>📍 Av. San Luis 1046, Bella Vista, Corrientes</p>
+      <p>📞 (54) 3777-841020</p>
+      <p>📧 ritaponcee888@gmail.com</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Panadería Dulce Amanecer — Tradición y sabor artesanal</p>
+  </footer>
+
+</body>
+</html>
